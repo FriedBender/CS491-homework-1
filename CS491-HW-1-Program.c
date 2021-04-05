@@ -25,7 +25,7 @@ int main(int argc, char *argv[]){
         strcpy(selected_key, argv[1]);
         key_length = strlen(selected_key);
         if(key_length >= 1 && key_length <= 4){
-            printf("\nKey Accepted\n");
+            printf("Key: %s Accepted\n", selected_key);
         }
         else{
             printf("\nThe key has to be 1-4 characters\n");
@@ -114,14 +114,6 @@ int main(int argc, char *argv[]){
         count_characters_command_line[(int)(tolower(c) - 'a')]++;
     }
 
-    printf("\nString:\n%s", source);
-    printf("\nLength of plaintext message: %ld\n\n", strlen(source) );
-    /*
-    printf("\n%-8s %-16s %-16s %-16s %25s\n", "Letter", "Relative Frequency", "Occurence", "Relative Frequency yz", "Relative Frequency wxyz");
-    for (int i = 0; i < 26; i++) {
-        printf("%-8c%10d%20.2f%%%10d%20.2f%%\n", i + 'a', count_characters[i], ( (double)count_characters[i] / length )*100 , encrypted_message[i], ((double)count_encrypted_characters[i]/length) * 100);
-    }
-    */
     printf("%-5s %30s %20s %30s %20s\n", "Letter", "Plaintext Count", "Plaintext Frequency", "Encrypted Count", "Encrypted Frequency");
     for (int i = 0; i < 26; i++) {
         printf("%-5c %30d %20.2f%% %30d %20.2f%%\n", i + 'a', count_characters_source[i], ( (double)count_characters_source[i]/length)*100, count_characters_command_line[i], ( (double)count_characters_command_line[i]/length)*100);
